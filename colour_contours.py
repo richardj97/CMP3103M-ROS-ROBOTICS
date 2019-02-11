@@ -6,6 +6,8 @@ import numpy
 from sensor_msgs.msg import Image
 from cv_bridge import CvBridge, CvBridgeError
 from geometry_msgs.msg import Twist
+import std_msgs.msg
+#msg = std_msgs.msg.String
 
 class image_converter:
 
@@ -15,7 +17,8 @@ class image_converter:
         self.bridge = CvBridge()
         self.image_sub = rospy.Subscriber("/camera/rgb/image_raw",
                                           Image, self.callback)
-        #self.pub = rospy.Publisher("/mobile_base/commands/velocity", Twist, queue_size=10) # Creating a publisher                         
+        #self.pub = rospy.Publisher("/mobile_base/commands/velocity", Twist, queue_size=10) # Creating a publisher    
+        self.pub = rospy.Publisher('/topic_name', std_msgs.msg.String)                     
                                           
     def callback(self, data):
         cv2.namedWindow("Image window", 1)
@@ -51,9 +54,13 @@ class image_converter:
             if a > 100.0:
                 cv2.drawContours(cv_image, c, -1, (255, 0, 0))
         print '===='
+        
+        self.pub.publish("Hello world!")
         cv2.imshow("Image window", cv_image)
         cv2.waitKey(1)
 
+
+#pub.publish(std_msgs.msg.String("foo"))
 
 image_converter()
 rospy.init_node('image_converter', anonymous=True)
