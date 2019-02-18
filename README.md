@@ -33,3 +33,13 @@ Create ros workspace
 8) spyder
 
 Then load the scripts from the dir: /home/student/catkin_ws/src/command_velocity/scripts/
+ 
+ 
+Open R-Viz
+1) In a new terminal, run rviz: roslaunch turtlebot_rviz_launchers view_robot.launch
+2) Tick the box next to image
+3) Expand the image node and select /camera/rgb/image_raw as the Topic
+4) Enable Laser Scan
+5) Tick the box next to Registered PointCloud
+6) Expand the Regesitered PointCloud node and select /camera/depth/points as the Topic
+7) If you haven't already done so, in Gazebo, select a cube, speher, or cylinder and drop it with a mouse click infront of the robot.
