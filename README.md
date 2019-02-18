@@ -30,6 +30,6 @@ Create ros workspace
 5) source ~/catkin_ws/devel/setup.bash
 6) roscore
 7) source ~/catkin_ws/devel/setup.bash
-   spyder
+8) spyder
 
 Then load the scripts from the dir: /home/student/catkin_ws/src/command_velocity/scripts/
