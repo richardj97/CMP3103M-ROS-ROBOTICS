@@ -12,6 +12,14 @@ Connect to real turtle-bot
 5) roslaunch kobuki_keyop keyop.launch
 6) roslaunch turtlebot_rviz_launchers view_robot.launch
 
+Open Gazebo
+
+1) roslaunch turtlebot_gazebo turtlebot_world.launch world_file:=$(rospack find turtlebot_gazebo)/worlds/empty.world
+
+Run Keyboard commands
+
+1) roslaunch kobuki_keyop keyop.launch
+
 Create ros workspace
 
 1) mkdir -p ~/catkin_ws/src; cd ~/catkin_ws/src; catkin_init_workspace .;
