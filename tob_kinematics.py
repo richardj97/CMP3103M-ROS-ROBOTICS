@@ -12,6 +12,10 @@ class left_wheel():
         self.pub = rospy.Publisher("/mobile_base/commands/velocity", Twist, queue_size=10)
         self.float32_sub = rospy.Subscriber("/wheel_vel_left",
                                               Float32, self.callback)
+        self.pete = rospy.Publisher("/wheel_vel_left" ,
+                                   Float32, queue_size=10)
+                                   
+        
         
     def callback(self, data):
         print(data.data)
