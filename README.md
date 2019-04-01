@@ -44,5 +44,8 @@ Open R-Viz
 6) Expand the Regesitered PointCloud node and select /camera/depth/points as the Topic
 7) If you haven't already done so, in Gazebo, select a cube, speher, or cylinder and drop it with a mouse click infront of the robot.
 
-Training: roslaunch uol_turtlebot_simulator object-search-training.launch
-Commands Pub: rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
+Training: 
+roslaunch uol_turtlebot_simulator object-search-training.launch
+
+Commands Pub: 
+rostopic pub -r 10 /cmd_vel geometry_msgs/Twist  '{linear:  {x: 0.1, y: 0.0, z: 0.0}, angular: {x: 0.0,y: 0.0,z: 0.0}}'
